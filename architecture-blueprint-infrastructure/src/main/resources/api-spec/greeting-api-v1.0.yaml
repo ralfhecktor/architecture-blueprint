@@ -1,0 +1,51 @@
+openapi: "3.0.3"
+info:
+  version: "1.0"
+  title: A simple greeter.
+  contact:
+    name: "Ralf Hecktor"
+    url: "http://www.ralf-hecktor.de"
+servers:
+  - url: http://localhost:8080
+paths:
+  /v1/greetings:
+    post:
+      summary: Greet an user.
+      operationId: greet
+      tags:
+        - Greetings
+      requestBody:
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GreetingRequest'
+      responses:
+        '200':
+          description: Greeting of the person specified.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Greeting'
+
+components:
+  schemas:
+    GreetingRequest:
+      type: object
+      required:
+        - user_id
+      properties:
+        user_id:
+          description: "Id of a certain user."
+          example: "550e8400-e29b-11d4-a716-446655440000"
+          type: string
+          format: uuid
+
+    Greeting:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          example: "Hello World!"
+          type: string

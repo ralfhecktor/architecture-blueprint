@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "338ddece-af9a-4932-82c0-5259bb55a281",
+		"name": "Architecture Blueprint",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Greet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user_id\": \"550e8400-e29b-11d4-a716-446655440000\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{schema}}://{{host}}:{{port}}/{{basePath}}/greetings",
+					"protocol": "{{schema}}",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"{{basePath}}",
+						"greetings"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

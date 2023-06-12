@@ -9,6 +9,9 @@ An "Hello World" project for a SOLID and DDD oriented application architecture.
 
 Alternatively simply run the main method within the `ArchitectureBlueprintApplication` class from your IDE.
 
+For running in a Kubernetes cluster, a readiness probe is exposed via `/actuator/health/readiness` and 
+liveness probe via `/actuator/health/liveness`.
+
 ## How to use
 
 1. Download and install [postman](https://www.postman.com/) if not already installed.
